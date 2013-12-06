@@ -1,30 +1,18 @@
 # pi-zzolo
 
-Configs, scripts, and docs for Raspberry Pi.
-
-# About
-
-* OS: Raspbian
-
-# Updates/Upgrades
-
-## Firmware upgrade
-
-* Using [rpi-update](https://github.com/Hexxeh/rpi-update/).
-
-## Raspbian
-
-* ```apt-get dist-upgrade``` installs gnome.  Don't think this is the preferred way to upgrade.
+Configs, scripts, and docs for Raspberry Pi.  Assuming Raspbian.
 
 # Configuration
 
 * Use the following to configure raspberry pi: ```sudo raspi-config```
+    * Setup internationalization for US
+    * Set password
+    * Advanced options: Enable SPI
+    * Advanced options: Change hostname
 
-# Packages
+# Update
 
-Manually installed packages:
-
-* ```git-core```
+* Use [rpi-update](https://github.com/Hexxeh/rpi-update/) to update firmware.
 
 # Peripherals
 
@@ -50,3 +38,4 @@ Make sure ```/etc/wpa_supplicant/wpa_supplicant.conf``` has a block like the fol
       psk="PASS_HERE"
     }
 
+Restart with `sudo /etc/init.d/networking restart`
