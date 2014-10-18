@@ -21,5 +21,17 @@ Configs, scripts, and docs for Raspberry Pi.  Assuming Raspbian.
 
 ### Wi-Pi
 
-1. See http://www.element14.com/community/servlet/JiveServlet/previewBody/49107-102-1-257014/Wi_Pi.User_Manual.pdf
+1. [Reference](http://www.element14.com/community/servlet/JiveServlet/previewBody/49107-102-1-257014/Wi_Pi.User_Manual.pdf) for the Wi-Pi
+1. Edit `/etc/network/interfaces`:
+
+```
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+allow-hotplug wlan0
+auto wlan0
+iface wlan0 inet dhcp
+wpa-ssid YOUR SSID HERE
+wpa-psk YOUR PASSWORD HERE
+```
 1. Restart with `sudo /etc/init.d/networking restart`
